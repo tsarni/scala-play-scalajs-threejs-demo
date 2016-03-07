@@ -14,7 +14,7 @@ lazy val server = (project in file("server")).settings(
     specs2 % Test
   ),
   // Heroku specific
-  herokuAppName in Compile := "your-heroku-app-name",
+  herokuAppName in Compile := "play-scala-scalajs-demo",
   herokuSkipSubProjects in Compile := false
 ).enablePlugins(PlayScala).
   aggregate(clients.map(projectToRef): _*).
