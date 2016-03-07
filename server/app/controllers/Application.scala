@@ -12,17 +12,16 @@ object Application extends Controller {
   }
   
   def getRSSFeed: play.twirl.api.Html = {
-    val response: HttpResponse[String] = Http("http://www.iltalehti.fi/rss.xml").asString
-    val latest = rssParser(response.body.toString())
-    val html = new play.twirl.api.Html(latest)
-    html
+    val response: HttpResponse[String] = Http("http://www.iltalehti.fi/rss.xml").charset("ISO-8859-1").asString
+    return new play.twirl.api.Html(rssParser(response.body))
   }
   
   def rssParser (implicit x:String) : String =  {
-    val xml = scala.xml.XML.loadString(x)
-    var title = ""
-   (xml\ "channel" \ "item").foreach { child => title += (child \ "title").text + "<br />" }
-    title
+    var title:String = ""
+   (scala.xml.XML.loadString(x) \ "channel" \ "item").foreach { child => 
+     title += "<b><a href="+ (child \ "link").text + "> " + (child \ "title").text+ "  </a></b>"  + "<em>" +  (child \ "pubDate").text + "</em><br />"
+   }
+    return title
   }
 
    
