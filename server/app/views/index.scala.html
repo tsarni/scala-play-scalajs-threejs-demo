@@ -1,9 +1,7 @@
-@(message: String)
+@(title: Html)
 
 @main("Play with Scala.js") {
-<h2>Demo application for trying out Scala + Play + Scala.js</h2>
-<ul>
-  <li>Play shouts out: <em>@message</em></li>
-  <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
-</ul>
+<h2>Latest RSS feed from <em id="scalajsShoutOut"></em></h2>
+<br />
+@title
 }

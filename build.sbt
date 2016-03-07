@@ -9,8 +9,10 @@ lazy val server = (project in file("server")).settings(
   pipelineStages := Seq(scalaJSProd, gzip),
   resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases",
   libraryDependencies ++= Seq(
-    "com.vmunier" %% "play-scalajs-scripts" % "0.4.0",
+    "com.vmunier" %% "play-scalajs-scripts" % "0.4.0", 
+    "org.scalaj" %% "scalaj-http" % "2.2.0",
     "org.webjars" % "jquery" % "1.11.1",
+
     specs2 % Test
   ),
   // Heroku specific
