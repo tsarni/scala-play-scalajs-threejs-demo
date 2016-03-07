@@ -1,5 +1,5 @@
-Demo project to test Scala + Scalas + Threejs Where Three.js code can be written server side with Scala. 
+Demo project to test Scala + Scala.js + Play framewok
 
-rename heroku app-name in build.sbt to allow deploying this applicatin to your own Heroku cloud.
+Live demo can be found from here Heroku: http://play-scala-scalajs-demo.herokuapp.com/
 
-Current sample on/off (free heroku account) can be found from here: http://play-scala-scalajs-demo.herokuapp.com/
+NOTICE: a free Heroku account = availability 6 hours/day
