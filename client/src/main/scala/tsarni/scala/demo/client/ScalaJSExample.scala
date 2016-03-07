@@ -1,4 +1,4 @@
-package example
+package tsarni.scala.demo.client
 
 import scala.scalajs.js
 import org.scalajs.dom
